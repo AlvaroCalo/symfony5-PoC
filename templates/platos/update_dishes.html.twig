@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Typical dishes in Donostia
+{% endblock %}
+
+{% block body %}
+	<div
+		class="fluid-container">
+		<!-- ======= About Section ======= -->
+		<section id="about" class="about">
+			<div class="container-fluid">
+
+				<h1>Update dish</h1>
+						<form action="{{path('platos.modificar')}}" method="POST" class="text-center">
+							<div class="form-group">
+								<input type="hidden" class="form-control" id="txtId" name="txtId" value="{{plato.Id}}">
+							</div>
+							<div class="form-group">
+								<label for="txtName">Dish name</label>
+								<input type="text" class="form-control" id="txtName" name="txtName" value="{{plato.Nombre}}">
+							</div>
+							<div class="form-group">
+								<label for="txtDesc">Dish description</label>
+								<input type="text" class="form-control" id="txtDesc" name="txtDesc" value="{{plato.Descripcion}}">
+							</div>
+							<div class="form-group">
+								<label for="txtPri">Dish price</label>
+								<input type="number" class="form-control" id="txtPri" name="txtPri" value="{{plato.Precio}}">
+							</div>
+							<div class="form-group">
+								<label for="txtPic">Dish picture</label>
+								<input type="text" class="form-control" id="txtPic" name="txtPic" value="{{plato.Imagen}}">
+							</div>
+							<button type="submit" class="btn btn-primary">Submit</button>
+						</form>
+
+			</div>
+		</section>
+		<!-- End About Section -->
+	</div>
+
+{% endblock %}

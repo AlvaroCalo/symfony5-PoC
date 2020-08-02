@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %} {% block title %}Welcome to GastroDonostia! {% endblock %} {% block body %}
+
+<div class="container">
+    <h1>Selected news</h1>
+
+    <table class="table table-striped">
+
+        <tr>
+            <th>ID</th>
+            <td>{{noticia.id}}</td>
+        </tr>
+
+        <tr>
+            <th>Title</th>
+            <td>{{noticia.Titulo}}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{noticia.Descripcion}}</td>
+        </tr>
+        <tr>
+            <th>Picture</th>
+            <td>{{noticia.Imagen}}</td>
+        </tr>
+
+
+    </table>
+</div>
+{% endblock %}

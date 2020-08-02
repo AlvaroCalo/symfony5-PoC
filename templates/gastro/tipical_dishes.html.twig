@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %} {% block title %}Typical dishes in Donostia {% endblock %} {% block body %}
+<div class="fluid-container">
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+        <div class="container-fluid">
+
+            <div class="row">
+                <div class="col-lg align-items-stretch video-box">
+                    <h1>Dishes list</h1>
+                    {% for mensaje in app.flashes("exito") %}
+                    <div class="alert alert-success">
+                        {{mensaje}}
+                    </div>
+                    {% endfor %}
+                    <a href="{{path('platos.anadir')}}">Add dish</a>
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Description</th>
+                                <th>Price</th>
+                                <th>Picture</th>
+                                <th>Show</th>
+                                <th>Remove</th>
+                                <th>Update</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for plato in platos %}
+                            <tr>
+                                <td>{{plato.id}}</td>
+                                <td>{{plato.Nombre}}</td>
+                                <td>{{plato.Descripcion}}</td>
+                                <td>{{plato.Precio}}</td>
+                                <td>{{plato.Imagen}}</td>
+                                <td><a href="{{path('mostrarP', {id:plato.id})}}">View dish</a></td>
+                                <td><a href="{{path('platos.borrar', {id:plato.id})}}">Remove</a></td>
+                                <td><a href="{{path('platos.modificarM', {id:plato.id})}}">Update</a></td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+    <!-- End About Section -->
+</div>
+
+{% endblock %}

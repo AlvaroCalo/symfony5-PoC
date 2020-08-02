@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %} {% block title %}Welcome to GastroDonostia! {% endblock %} {% block body %}
+
+<div class="container">
+    <h1>Selected dish</h1>
+
+    <table class="table table-striped">
+
+        <tr>
+            <th>ID</th>
+            <td>{{plato.id}}</td>
+        </tr>
+
+        <tr>
+            <th>Name</th>
+            <td>{{plato.Nombre}}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{plato.Descripcion}}</td>
+        </tr>
+        <tr>
+            <th>Price</th>
+            <td>{{plato.Precio}}</td>
+        </tr>
+        <tr>
+            <th>Pciture</th>
+            <td>{{plato.Imagen}}</td>
+        </tr>
+
+
+    </table>
+</div>
+{% endblock %}
